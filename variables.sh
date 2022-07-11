@@ -8,7 +8,7 @@ age=27
 profession=DevOpsEngineer
 education=M.Tech
 
-echo $user
-echo $age
-echo $profession
-echo $education
+echo "$user"
+echo "$age"
+echo "$profession"
+echo "$education"

@@ -1,5 +1,5 @@
 #! /bin/bash
 
 echo "Enter names : "
-read -a names
+read -ra names
 echo "Names: ${names[0]}, ${names[1]}"

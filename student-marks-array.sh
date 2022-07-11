@@ -1,8 +1,8 @@
 #! /bin/bash
 
 echo "Enter Student Names : "
-read -a students
+read -ra students
 echo "Enter Student Marks : "
-read -a marks
+read -ra marks
 echo "Enterd Students Are : ${students[*]}" 
 echo "Entered Students Marks Are : ${marks[*]}"

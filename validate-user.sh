@@ -1,6 +1,6 @@
 #! /bin/bash
 
-read -p 'Enter UserName : ' username
+read -rp 'Enter UserName : ' username
 
 if [ "$username" == "nani" ]
 then

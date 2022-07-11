@@ -4,11 +4,11 @@ users=("hari" "bhanu" "ravi" "raju" "rehman" "mani")
 
 # echo ${users[@]}
 
-read -p 'Enter Username : ' entereduser
+read -rp 'Enter Username : ' entereduser
 
-foreach $entereduser ( * )
+foreach "$entereduser" ( * )
 do
-if [[ $entereduser = ${users[@]} ]]
+if [ $entereduser = $users ]
 then
     echo "Valid User"
 else
