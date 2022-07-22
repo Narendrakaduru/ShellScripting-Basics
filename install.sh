@@ -1,1 +1,1 @@
-yum install tree -y
+sudo apt install tree -y
