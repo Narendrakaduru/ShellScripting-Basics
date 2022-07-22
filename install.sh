@@ -1,1 +1,1 @@
-sudo apt install tree -y
+sudo mkdir nani
