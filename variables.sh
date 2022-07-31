@@ -14,7 +14,7 @@ echo "$profession"
 echo "$education"
 
 # system variables
-echo $BASH
-echo $BASH_VERSION
-echo $HOME
-echo $PWD
+echo "$BASH"
+echo "$BASH_VERSION"
+echo "$HOME"
+echo "$PWD"
