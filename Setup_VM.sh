@@ -55,7 +55,7 @@ source /root/.bashrc
 
 # Add user to Sudoers file
 echo "Add user to Sudoers file"
-sudo echo '$user ALL=(ALL) NOPASSWD:ALL' >> /etc/sudoers
+echo "$USER ALL=(ALL) NOPASSWD:ALL" | sudo tee -a /etc/sudoers
 
 # Enable Password Authentication
 echo "Enable Password Authentication"
