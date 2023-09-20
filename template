@@ -1,0 +1,11 @@
+#!/bin/bash
+read -rp "Please provide filename to create" file
+touch /home/nani/scripts/$file.sh
+echo '#!/bin/bash' > /home/nani/scripts/$file.sh
+echo '#Purpose : ' >> /home/nani/scripts/$file.sh
+echo '#Version : v1' >> /home/nani/scripts/$file.sh
+echo '#Created Date : ' `date` >> /home/nani/scripts/$file.sh
+echo '#Author : Narendra Kaduru' >> /home/nani/scripts/$file.sh
+echo '############### START ###############' >> /home/nani/scripts/$file.sh
+echo '###############  END  ###############' >> /home/nani/scripts/$file.sh
+chmod 777 /home/nani/scripts/$file.sh
