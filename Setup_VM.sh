@@ -5,6 +5,8 @@
 #Author : Narendra Kaduru
 ############### START ###############
 
+set -x
+
 # Check if the script is run as root
 if [ "$(id -u)" -ne 0 ]; then
   echo "This script must be run as root or with sudo."
