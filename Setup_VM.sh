@@ -61,6 +61,11 @@ echo "$user ALL=(ALL) NOPASSWD:ALL" | sudo tee -a /etc/sudoers
 echo "Enable Password Authentication"
 sudo echo 'PasswordAuthentication yes' >> /etc/ssh/sshd_config
 
+# Disable IPv6
+sudo echo "net.ipv6.conf.all.disable_ipv6 = 1
+net.ipv6.conf.default.disable_ipv6 = 1" >> /etc/sysctl.conf
+sudo sysctl -p
+
 # Configure NetworkManager
 echo "Configure NetworkManager"
 sudo systemctl enable NetworkManager.service
