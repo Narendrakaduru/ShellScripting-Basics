@@ -80,7 +80,7 @@ network:
   version: 2
   renderer: NetworkManager
   ethernets:
-    enp0s8:
+    enp0s3:
       dhcp4: no
       addresses: [$IP/24]
       gateway4: $gateway
