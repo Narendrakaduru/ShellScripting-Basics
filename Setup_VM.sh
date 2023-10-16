@@ -27,10 +27,10 @@ echo "Set timzone to Kolkata"
 sudo timedatectl set-timezone Asia/Kolkata
 
 # Extend LVM Volume
-echo "Extend LVM Volume"
-sudo pvresize /dev/sda3
-sudo lvextend -l +100%FREE /dev/mapper/ubuntu--vg-ubuntu--lv
-sudo resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv
+#echo "Extend LVM Volume"
+#sudo pvresize /dev/sda3
+#sudo lvextend -l +100%FREE /dev/mapper/ubuntu--vg-ubuntu--lv
+#sudo resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv
 
 # Install Dependency Packages
 echo "Install Dependency Packages"
