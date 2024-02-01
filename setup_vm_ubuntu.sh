@@ -39,13 +39,20 @@ sudo apt-get install -y openjdk-17-jdk
 
 # Download maven from central repo
 echo "Download maven from central repo"
-latest_version=$(curl -s https://maven.apache.org/download.cgi | grep -oP 'apache-maven-\K[0-9]+\.[0-9]+\.[0-9]+' | head -n 1)
-major_version=$(echo "$latest_version" | cut -d'.' -f1)
-download_url="https://dlcdn.apache.org/maven/maven-${major_version}/${latest_version}/binaries/apache-maven-${latest_version}-bin.tar.gz"
-sudo wget "$download_url"
+maven_latest_version=$(curl -s https://maven.apache.org/download.cgi | grep -oP 'apache-maven-\K[0-9]+\.[0-9]+\.[0-9]+' | head -n 1)
+maven_major_version=$(echo "$latest_version" | cut -d'.' -f1)
+maven_download_url="https://dlcdn.apache.org/maven/maven-${major_version}/${latest_version}/binaries/apache-maven-${latest_version}-bin.tar.gz"
+sudo wget "$maven_download_url"
 sudo tar -xvzf apache-maven*.tar.gz
 sudo rm -rf apache-maven*.tar.gz
 sudo mv apache-maven* /opt/maven
+
+jfrog_latest_version=$(curl -s https://releases.jfrog.io/artifactory/bintray-artifactory/org/artifactory/oss/jfrog-artifactory-oss/ | awk -F/ '/[0-9]+\.[0-9]+\.[0-9]+/ {print $2}' | sort -V | tail -n 1 | cut -c3-)
+jfrog_download_url="https://releases.jfrog.io/artifactory/bintray-artifactory/org/artifactory/oss/jfrog-artifactory-oss/${jfrog_latest_version}/jfrog-artifactory-oss-${jfrog_latest_version}-linux.tar.gz"
+sudo wget "$jfrog_download_url"
+sudo tar -xvzf jfrog-artifactory-oss-*.tar.gz
+sudo rm -rf jfrog-artifactory-oss-*.tar.gz
+sudo mv jfrog-artifactory-oss-* /opt/jfrog
 
 # Update path in bashrc
 echo "Update path in bashrc"
