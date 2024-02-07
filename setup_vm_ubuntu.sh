@@ -40,8 +40,8 @@ sudo apt-get install -y openjdk-17-jdk
 # Download maven from central repo
 echo "Download maven from central repo"
 maven_latest_version=$(curl -s https://maven.apache.org/download.cgi | grep -oP 'apache-maven-\K[0-9]+\.[0-9]+\.[0-9]+' | head -n 1)
-maven_major_version=$(echo "$latest_version" | cut -d'.' -f1)
-maven_download_url="https://dlcdn.apache.org/maven/maven-${major_version}/${latest_version}/binaries/apache-maven-${latest_version}-bin.tar.gz"
+maven_major_version=$(echo "$maven_latest_version" | cut -d'.' -f1)
+maven_download_url="https://dlcdn.apache.org/maven/maven-${maven_major_version}/${maven_latest_version}/binaries/apache-maven-${maven_latest_version}-bin.tar.gz"
 sudo wget "$maven_download_url"
 sudo tar -xvzf apache-maven*.tar.gz
 sudo rm -rf apache-maven*.tar.gz
